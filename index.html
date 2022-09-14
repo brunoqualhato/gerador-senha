@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de senhas com js</title>
+</head>
+<body>
+    <h1>Gerador de senhas com js</h1>
+    <button onclick="gerarSenha()">Gerar senha</button>
+    <!-- quantidade de caracteres -->
+    <input type="number" placeholder="Quantidade caracteres" id="qtdCaracteres" value="">
+
+    <p id="senha"></p>
+    <script>
+    
+    function gerarSenha(){
+        let caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*()_+";
+        let senha = "";
+        let qtdCaracteres = document.getElementById("qtdCaracteres").value;
+        for(let i = 0; i < qtdCaracteres; i++){
+            senha += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+        }
+        document.getElementById("senha").innerHTML = senha;
+    }
+    </script>
+</body>
+</html>
